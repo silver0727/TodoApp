@@ -43,6 +43,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":presentation"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
     // Google Library
     implementation ("androidx.core:core-ktx:${Versions.androidx_core}")
