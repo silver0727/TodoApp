@@ -5,6 +5,12 @@ plugins {
     kotlin("android") version Versions.kotlin apply false
 }
 
+buildscript {
+    dependencies {
+        classpath(BuildPlugins.dagger_hilt_plugin)
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

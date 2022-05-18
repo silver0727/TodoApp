@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 plugins {
     id ("com.android.application")
     kotlin("android")
+    kotlin("kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 apply(from = "../android.gradle")
@@ -32,6 +35,10 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":data"))
     implementation(project(":domain"))
+
+    // Hilt
+    implementation(Libraries.Hilt.android)
+    kapt(Libraries.Hilt.compiler)
 
     // Test Library
     testImplementation ("junit:junit:4.13.2")
