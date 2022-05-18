@@ -13,7 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "TodoApp"
-include(":app")
-include(":domain")
-include(":data")
-include(":presentation")
+include("app", "presentation", "data", "domain")

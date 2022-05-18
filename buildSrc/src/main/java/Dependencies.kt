@@ -1,4 +1,4 @@
-object Apps {
+object AppConfig {
     const val applicationId = "com.yeshin.todoapp"
     const val compileSDK = 32
     const val minSDK = 23
@@ -14,4 +14,11 @@ object Versions {
     const val androidx_appcompat = "1.4.1"
     const val material = "1.6.0"
     const val constraintlayout = "2.1.3"
+}
+
+object Libraries {
+    const val androidx_core_ktx = "androidx.core:core-ktx:${Versions.androidx_core}"
+    const val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
+    const val androidx_constaintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
+    const val google_material = "com.google.android.material:material:${Versions.material}"
 }
