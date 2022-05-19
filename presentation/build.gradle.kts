@@ -20,14 +20,16 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.androidx_core_ktx)
-    implementation(Libraries.androidx_appcompat)
-    implementation(Libraries.androidx_constaintlayout)
+    implementation(Libraries.AndroidX.core_ktx)
+    implementation(Libraries.AndroidX.appcompat)
+    implementation(Libraries.AndroidX.constaintlayout)
     implementation(Libraries.google_material)
 
     // Hilt
     implementation(Libraries.Hilt.android)
     kapt(Libraries.Hilt.compiler)
+
+//    implementation(Libraries.viewModel)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")

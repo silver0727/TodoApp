@@ -10,18 +10,26 @@ object AppConfig {
 object Versions {
     const val gradle = "7.1.3"
     const val kotlin = "1.6.21"
-    const val androidx_core = "1.7.0"
-    const val androidx_appcompat = "1.4.1"
-    const val material = "1.6.0"
+    // UI
+    const val core_ktx = "1.7.0"
+    const val appcompat = "1.4.1"
     const val constraintlayout = "2.1.3"
+    const val material = "1.6.0"
+    // DI
     const val hilt = "2.28-alpha"
+    const val viewmodel_ktx = "2.4.1"
 }
 
 object Libraries {
-    const val androidx_core_ktx = "androidx.core:core-ktx:${Versions.androidx_core}"
-    const val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
-    const val androidx_constaintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
     const val google_material = "com.google.android.material:material:${Versions.material}"
+
+    val viewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel:${Versions.viewmodel_ktx}" }
+
+    object AndroidX {
+        val core_ktx by lazy { "androidx.core:core-ktx:${Versions.core_ktx}" }
+        val appcompat by lazy { "androidx.appcompat:appcompat:${Versions.appcompat}" }
+        val constaintlayout by lazy { "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}" }
+    }
 
     object Hilt {
         val android by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
