@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id ("dagger.hilt.android.plugin")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 apply(from = "../android.gradle")
@@ -23,6 +24,8 @@ dependencies {
     implementation(Libraries.AndroidX.core_ktx)
     implementation(Libraries.AndroidX.appcompat)
     implementation(Libraries.AndroidX.constaintlayout)
+    implementation(Libraries.AndroidX.navigation_fragment_ktx)
+    implementation(Libraries.AndroidX.navigation_ui_ktx)
     implementation(Libraries.google_material)
 
     // Hilt

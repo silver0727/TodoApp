@@ -8,6 +8,7 @@ plugins {
 buildscript {
     dependencies {
         classpath(BuildPlugins.dagger_hilt_plugin)
+        classpath(BuildPlugins.navigation_plugin)
     }
 }
 
