@@ -7,7 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.silver0727.presentation.R
 import com.silver0727.presentation.databinding.TasksFragmentBinding
+import com.silver0727.presentation.model.navigation.NavigationDestination
+import com.silver0727.presentation.utils.navigate
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 /**
@@ -75,11 +79,27 @@ class TasksFragment : Fragment() {
     }
 
     private fun setupObservers() {
+        lifecycleScope.launch {
+            mViewModel.navigationDestination.collect { event ->
+                navigateFragment(event ?: return@collect)
+            }
+        }
 
         mViewModel.tasks.observe(viewLifecycleOwner) {
             Timber.d("tasks ${it.size}")
         }
     }
 
+    private fun navigateFragment(event: NavigationDestination) {
+        when(event) {
+            NavigationDestination.AddTask -> {
+                navigate(
+                    TasksFragmentDirections.actionTasksFragmentToTaskEditingFragment()
+                )
+            }
+            else -> {
+                Timber.v("undefined navigation")
+            }
+        }
     }
 }
