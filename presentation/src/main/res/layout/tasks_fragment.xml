@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.silver0727.presentation.ui.tasks.TasksViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
