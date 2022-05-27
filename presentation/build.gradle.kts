@@ -26,6 +26,8 @@ dependencies {
     implementation(Libraries.AndroidX.constaintlayout)
     implementation(Libraries.AndroidX.navigation_fragment_ktx)
     implementation(Libraries.AndroidX.navigation_ui_ktx)
+    implementation(project(":domain"))
+
     implementation(Libraries.google_material)
 
     // Hilt

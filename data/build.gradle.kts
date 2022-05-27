@@ -8,6 +8,8 @@ plugins {
 apply(from = "../android.gradle")
 
 dependencies {
+    implementation(project(":domain"))
+
     // Hilt
     implementation(Libraries.Hilt.android)
     kapt(Libraries.Hilt.compiler)
