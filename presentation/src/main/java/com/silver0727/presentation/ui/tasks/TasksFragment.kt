@@ -7,6 +7,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.silver0727.presentation.R
 import com.silver0727.presentation.databinding.TasksFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 /**
  * 작업 목록 페이지
@@ -16,6 +18,8 @@ class TasksFragment : Fragment() {
 
     private var _binding: TasksFragmentBinding? = null
     private val binding get() = _binding
+
+    private lateinit var tasksAdapter: TasksAdapter
 
     private val mViewModel: TasksViewModel by viewModels()
 
@@ -54,6 +58,7 @@ class TasksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        mViewModel.fetchTasks()
     }
 
     override fun onDestroyView() {
@@ -62,8 +67,18 @@ class TasksFragment : Fragment() {
     }
 
     private fun initView() {
+        tasksAdapter = TasksAdapter()
+        with(binding) {
+            this ?: return@with
+            rvTasks.adapter = tasksAdapter
+        }
+    }
 
     private fun setupObservers() {
+
+        mViewModel.tasks.observe(viewLifecycleOwner) {
+            Timber.d("tasks ${it.size}")
+        }
     }
 
     }
