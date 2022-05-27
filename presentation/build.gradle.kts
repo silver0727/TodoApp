@@ -21,14 +21,29 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.AndroidX.core_ktx)
-    implementation(Libraries.AndroidX.appcompat)
-    implementation(Libraries.AndroidX.constaintlayout)
-    implementation(Libraries.AndroidX.navigation_fragment_ktx)
-    implementation(Libraries.AndroidX.navigation_ui_ktx)
     implementation(project(":domain"))
 
+    Libraries.Debugging.apply {
+        implementation(timber)
+    }
+
+    Libraries.AndroidX.apply {
+        implementation(core_ktx)
+        implementation(appcompat)
+        implementation(constaintlayout)
+        implementation(fragment_ktx)
+        implementation(navigation_fragment_ktx)
+        implementation(navigation_ui_ktx)
+    }
+
     implementation(Libraries.google_material)
+
+    Libraries.Lifecycle.apply {
+        implementation(runtime)
+        implementation(process)
+        implementation(viewModel_ktx)
+        implementation(livedata_ktx)
+    }
 
     // Hilt
     implementation(Libraries.Hilt.android)
