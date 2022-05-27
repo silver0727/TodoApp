@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="head_20">20dp</dimen>
+    <dimen name="head_16">16dp</dimen>
+
+    <dimen name="body_16">16dp</dimen>
+    <dimen name="body_14">14dp</dimen>
+
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_19">19dp</dimen>
+    <dimen name="space_18">18dp</dimen>
+    <dimen name="space_17">17dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_15">15dp</dimen>
+    <dimen name="space_14">14dp</dimen>
+    <dimen name="space_13">13dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_11">11dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_9">9dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_3">3dp</dimen>
+
+    <dimen name="toolbar_height">50dp</dimen>
+    <dimen name="header_height">192dp</dimen>
+    <dimen name="edittext_height">50dp</dimen>
+
+    <dimen name="header_image_width">100dp</dimen>
+
+</resources>

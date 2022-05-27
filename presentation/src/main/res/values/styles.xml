@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Silver.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">3dp</item>
+        <item name="titleTextAppearance">@style/Toolbar.Font</item>
+    </style>
+
+    <style name="Silver.ActionOverflowButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:backgroundTint">@color/purple_200</item>
+        <item name="tint">@color/white</item>
+        <item name="rippleColor">@color/purple_500</item>
+        <item name="fabSize">normal</item>
+        <item name="borderWidth">0dp</item>
+    </style>
+
+    <style name="Silver.EditText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/edittext_height</item>
+        <item name="android:textAppearance">@style/Silver.Text.Body.14</item>
+        <item name="android:padding">@dimen/space_10</item>
+    </style>
+
+</resources>

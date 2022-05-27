@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar.Font" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/head_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Silver.Text" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Silver.Text.Head" parent="Silver.Text">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Silver.Text.Head.20" parent="Silver.Text.Head">
+        <item name="android:textSize">@dimen/head_20</item>
+    </style>
+
+    <style name="Silver.Text.Body" parent="Silver.Text">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Silver.Text.Body.14" parent="Silver.Text.Body">
+        <item name="android:textSize">@dimen/body_14</item>
+    </style>
+    
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDo</string>
+
+    <!-- Titles -->
+    <string name="title_tasks">작업 목록</string>
+    <string name="title_statistics">작업 통계</string>
+
+    <!-- Menus -->
+    <string name="menu_filter">필터</string>
+    <string name="menu_clear">작업 완료</string>
+    <string name="menu_delete_task">작업 삭제</string>
+    <string name="refresh">새로고침</string>
+
+    <!-- Headers -->
+    <string name="header_all_tasks">모든 작업</string>
+
+    <!-- Hint -->
+    <string name="hint_title">제목을 입력해주세요.</string>
+
+</resources>
