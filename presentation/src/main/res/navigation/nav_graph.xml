@@ -17,6 +17,13 @@
         <action
             android:id="@+id/action_tasksFragment_to_statisticsFragment"
             app:destination="@id/statistics_fragment_dest" />
+        <action
+            android:id="@+id/action_tasksFragment_to_taskEditingFragment"
+            app:destination="@+id/task_editing_fragment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/statistics_fragment_dest"
@@ -25,6 +32,20 @@
         tools:layout="@layout/statistics_fragment">
         <action
             android:id="@+id/action_statisticsFragment_to_tasksFragment"
+            app:destination="@+id/tasks_fragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/task_editing_fragment_dest"
+        android:name="com.silver0727.presentation.ui.editing.TaskEditingFragment"
+        android:label="{title}"
+        tools:layout="@layout/task_editing_fragment">
+        <argument
+            android:name="title"
+            android:defaultValue="새로운 작업"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_taskEditingFragment_to_tasksFragment"
             app:destination="@+id/tasks_fragment_dest" />
     </fragment>
     <argument
