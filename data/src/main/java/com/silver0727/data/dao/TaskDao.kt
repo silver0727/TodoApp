@@ -15,4 +15,7 @@ interface TaskDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTask(task: Task)
+
+    @Query("SELECT * FROM Tasks WHERE entryId = :taskId")
+    fun observeTaskById(taskId: String): Flow<Task>
 }

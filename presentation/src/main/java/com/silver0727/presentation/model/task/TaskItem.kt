@@ -7,4 +7,5 @@ data class TaskItem(
     val title: String,
     val description: String,
     val isCompleted: Boolean,
+    val onDetail: ((String, String) -> Unit)? = null
 ): Item()

@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.silver0727.presentation.model.task.TaskItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:onClick="@{()->item.onDetail.invoke(item.id, item.title)}">
 
         <CheckBox
             android:id="@+id/cb_task"
@@ -30,6 +34,7 @@
             android:layout_marginStart="@dimen/space_8"
             android:layout_marginEnd="@dimen/space_16"
             android:text="@{item.title}"
+            app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"

@@ -7,7 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.silver0727.domain.TaskLocalRepository
 import com.silver0727.presentation.model.navigation.NavigationDestination
 import com.silver0727.presentation.model.task.TaskItem
+import com.silver0727.presentation.model.task.TaskItemMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.collect
@@ -31,12 +34,17 @@ class TasksViewModel @Inject constructor(
             repository.getTasks().collect { taskList ->
                 _tasks.postValue(
                     taskList.map { task ->
-                        TaskItem(
-                            id = task.id,
-                            title = task.title,
-                            description = task.description,
-                            isCompleted = task.isCompleted,
+                        TaskItemMapper.toPresentation(task).copy(
+                            onDetail = { taskId, title ->
+                                setNavigationEvent(
+                                    NavigationDestination.TaskDetail(
+                                        taskId = taskId,
+                                        title = title
+                                    )
+                                )
+                            }
                         )
+
                     }
                 )
             }
@@ -45,7 +53,7 @@ class TasksViewModel @Inject constructor(
     }
 
     private fun setNavigationEvent(event: NavigationDestination) {
-        viewModelScope.launch {
+        CoroutineScope(Dispatchers.Default).launch {
             _navigationDestination.emit(event)
         }
     }

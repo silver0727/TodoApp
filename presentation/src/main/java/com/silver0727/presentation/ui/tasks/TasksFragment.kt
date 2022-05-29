@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.silver0727.presentation.R
 import com.silver0727.presentation.databinding.TasksFragmentBinding
 import com.silver0727.presentation.model.navigation.NavigationDestination
-import com.silver0727.presentation.utils.navigate
+import com.silver0727.presentation.utils.NavigationHandler
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -92,9 +92,19 @@ class TasksFragment : Fragment() {
 
     private fun navigateFragment(event: NavigationDestination) {
         when(event) {
-            NavigationDestination.AddTask -> {
-                navigate(
-                    TasksFragmentDirections.actionTasksFragmentToTaskEditingFragment()
+            is NavigationDestination.AddTask -> {
+                NavigationHandler.navigateSafe(
+                    fragment = this,
+                    direction = TasksFragmentDirections.actionTasksFragmentToTaskEditingFragment()
+                )
+            }
+            is NavigationDestination.TaskDetail -> {
+                NavigationHandler.navigateSafe(
+                    fragment = this,
+                    direction = TasksFragmentDirections.actionTasksFragmentToTaskDetailFragment(
+                        taskId = event.taskId,
+                        title = event.title
+                    )
                 )
             }
             else -> {
