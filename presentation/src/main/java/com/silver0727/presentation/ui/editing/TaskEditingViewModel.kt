@@ -3,7 +3,7 @@ package com.silver0727.presentation.ui.editing
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.silver0727.domain.TaskLocalRepository
-import com.silver0727.domain.dto.TaskDTO
+import com.silver0727.domain.model.TaskModel
 import com.silver0727.domain.usecase.InsertTaskUseCase
 import com.silver0727.presentation.model.navigation.NavigationDestination
 import com.silver0727.presentation.model.task.TaskItem
@@ -59,7 +59,7 @@ class TaskEditingViewModel @Inject constructor(
         description: String
     ) {
         viewModelScope.launch {
-            val taskDTO = TaskDTO(
+            val taskModel = TaskModel(
                 title = title,
                 description = description,
                 isCompleted = false
@@ -67,7 +67,7 @@ class TaskEditingViewModel @Inject constructor(
 
             if (title.isEmpty() || description.isEmpty()) return@launch
 
-            insertTaskUseCase(taskDTO) {
+            insertTaskUseCase(taskModel) {
                 Timber.v("success? $it")
                 setNavigationEvent()
             }

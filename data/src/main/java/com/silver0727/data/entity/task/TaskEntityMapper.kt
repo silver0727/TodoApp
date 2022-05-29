@@ -1,10 +1,10 @@
 package com.silver0727.data.entity.task
 
 import com.silver0727.data.base.DataMapper
-import com.silver0727.domain.dto.TaskDTO
+import com.silver0727.domain.model.TaskModel
 
-object TaskEntityMapper : DataMapper<Task, TaskDTO> {
-    override fun toData(dto: TaskDTO): Task {
+object TaskEntityMapper : DataMapper<Task, TaskModel> {
+    override fun toData(dto: TaskModel): Task {
         val taskId = dto.id
         val task = Task(
             title = dto.title,
@@ -18,8 +18,8 @@ object TaskEntityMapper : DataMapper<Task, TaskDTO> {
         }
     }
 
-    override fun toDomain(entity: Task): TaskDTO {
-        return TaskDTO(
+    override fun toDomain(entity: Task): TaskModel {
+        return TaskModel(
             id = entity.id,
             title = entity.title,
             description = entity.description,

@@ -1,10 +1,10 @@
-package com.silver0727.domain.dto
+package com.silver0727.domain.model
 
-import com.silver0727.domain.base.DTO
+import com.silver0727.domain.base.Model
 
-data class TaskDTO(
+data class TaskModel(
     val id: String = "",
     val title: String,
     val description: String,
     val isCompleted: Boolean,
-): DTO()
+): Model()
