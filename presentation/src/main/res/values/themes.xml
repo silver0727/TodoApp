@@ -13,6 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="floatingActionButtonStyle">@style/Silver.ActionOverflowButtonStyle</item>
+        <item name="drawerArrowStyle">@style/Sliver.Toolbar.DrawerIconStyle</item>
+        <item name="actionOverflowButtonStyle">@style/Sliver.Toolbar.ActionButtonOverflow</item>
     </style>
 
 </resources>
