@@ -9,5 +9,7 @@ interface TaskLocalRepository {
 
     fun getTasks(): Flow<List<TaskDTO>>
 
+    fun getTaskById(taskId: String): Flow<TaskDTO>
+
     fun testString(): String
 }

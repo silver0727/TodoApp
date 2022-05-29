@@ -24,8 +24,11 @@ class TaskLocalRepositoryImpl @Inject constructor(
             tasks.map { TaskEntityMapper.toDomain(it) }
         }
     }
+
+    override fun getTaskById(taskId: String): Flow<TaskDTO> {
+        return local.observeTaskById(taskId = taskId).map { task ->
+            TaskEntityMapper.toDomain(task)
         }
-        return test
     }
 
     override fun testString(): String {
