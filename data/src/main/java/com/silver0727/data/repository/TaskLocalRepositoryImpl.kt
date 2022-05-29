@@ -1,7 +1,7 @@
 package com.silver0727.data.repository
 
 import com.silver0727.data.dao.TaskDao
-import com.silver0727.data.entity.Task
+import com.silver0727.data.entity.task.Task
 import com.silver0727.domain.TaskLocalRepository
 import com.silver0727.domain.dto.TaskDTO
 import kotlinx.coroutines.flow.Flow

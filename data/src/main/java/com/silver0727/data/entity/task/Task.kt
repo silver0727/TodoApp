@@ -1,9 +1,8 @@
-package com.silver0727.data.entity
+package com.silver0727.data.entity.task
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.silver0727.domain.dto.TaskDTO
 import java.util.*
 
 @Entity(tableName = "tasks")
@@ -12,4 +11,4 @@ data class Task(
     @ColumnInfo(name = "title") var title: String = "",
     @ColumnInfo(name = "description") var description: String = "",
     @ColumnInfo(name = "completed") var isCompleted: Boolean = false,
-)
+): com.silver0727.domain.base.Entity()
