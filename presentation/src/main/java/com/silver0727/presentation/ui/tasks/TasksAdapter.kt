@@ -12,7 +12,7 @@ class TasksAdapter : ListAdapter<TaskItem, TasksAdapter.TaskViewHolder>(TaskDiff
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(
-            TaskListItemBinding.inflate(LayoutInflater.from(parent.context))
+            TaskListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
@@ -22,7 +22,7 @@ class TasksAdapter : ListAdapter<TaskItem, TasksAdapter.TaskViewHolder>(TaskDiff
 
     class TaskViewHolder(
         private val binding: TaskListItemBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: TaskItem) {
             with(binding) {
                 this.item = item
