@@ -2,6 +2,7 @@ package com.silver0727.data.repository
 
 import com.silver0727.data.dao.TaskDao
 import com.silver0727.data.entity.task.Task
+import com.silver0727.data.entity.task.TaskEntityMapper
 import com.silver0727.domain.TaskLocalRepository
 import com.silver0727.domain.dto.TaskDTO
 import kotlinx.coroutines.flow.Flow
@@ -14,24 +15,15 @@ class TaskLocalRepositoryImpl @Inject constructor(
 
     override suspend fun insertTask(task: TaskDTO) {
         local.insertTask(
-            Task(
-                title = task.title,
-                description = task.description,
-                isCompleted = task.isCompleted
-            )
+            TaskEntityMapper.toData(task)
         )
     }
 
     override fun getTasks(): Flow<List<TaskDTO>> {
-        val test = local.observeTasks().map {
-            it.map { task ->
-                TaskDTO(
-                    id = task.id,
-                    title = task.title,
-                    description = task.description,
-                    isCompleted = task.isCompleted,
-                )
-            }
+        return local.observeTasks().map { tasks ->
+            tasks.map { TaskEntityMapper.toDomain(it) }
+        }
+    }
         }
         return test
     }
